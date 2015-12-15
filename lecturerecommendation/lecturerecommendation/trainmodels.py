@@ -8,3 +8,4 @@ class TrainData(models.Model):
     high = models.CharField(max_length=1)
     music = models.CharField(max_length=1)
     polits = models.CharField(max_length=1)
+    lecpref = models.CharField(max_length=3,min_length=3)
