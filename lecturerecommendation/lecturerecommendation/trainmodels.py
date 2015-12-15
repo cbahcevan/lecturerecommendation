@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils import timezone
 
-class TrainedOutput(models.Model):
+class TrainData(models.Model):
     math = models.CharField(max_length=1)
     lit = models.CharField(max_length=1)
     read = models.CharField(max_length=1)
