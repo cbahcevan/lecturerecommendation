@@ -2,7 +2,9 @@ from django.shortcuts import render
 from .forms import DForms
 def main(request):
     form = DForms()
+
     if request.method == "POST":
+    	print request.POST['math']
     	if form.is_valid():
     	 print "valid oluyormu"
          form = DForms(request.POST)
