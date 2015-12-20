@@ -1,8 +1,12 @@
 from django import forms
-class DForms(forms.Form):
+from .trainmodels import TrainData
 
- love = (
-    (1, ‘Yes’),
-    (0, ’No’),
-)
-math = forms.ChoiceField(choices = love, label="", initial='', widget=forms.Select(), required=True)
+class DForms(forms.Form):
+  class Meta:
+       model = TrainData
+       fields = ('l', 'text',)
+
+  love = (
+    (1, 'Yes'),
+    (0, 'No'),)
+  math = forms.ChoiceField(choices = ((1,"Yes"),(0,"No")), label="do you love math", initial='', widget=forms.Select(), required=True)
