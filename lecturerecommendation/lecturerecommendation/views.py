@@ -3,15 +3,20 @@ from .models import TrainData
 from .forms import DForms
 import preparedata
 
+"""
+This function translates form input into data which we can evaluate
+and predict using sklearn
+"""
+def organizeFormData(req):
+	organized = map(lambda x:req[x],req)
+	del(organized[4])#csrf token
+	print map(lambda x:int(x),organized)
+
+
 def main(request):
     form = DForms()
     print preparedata.fitDataToPandas(TrainData.objects.all())
     if request.method == "POST":
-    	print request.POST['math']
-    	if form.is_valid():
-    	 print "valid oluyormu"
-         form = DForms(request.POST)
-         math= form.cleaned_data["math"]
-         lit= form.cleaned_data ["lit"]
-         return render(request, 'main.html', {})      
+    	organizeFormData(request.POST)
+        return render(request, 'main.html', {})      
     return render(request, 'main.html', {'form':form})
