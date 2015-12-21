@@ -1,5 +1,25 @@
+<html>
+<head>
+	<style>
+	#result{
+	 position:relative;
+     margin-left:40%;
+     }
+     #question{
+      position:absolute;
+     }
+     </style>
+	</head>
+	<body>
 <h1> Lecture Recommendation System </h1>
+<section id="question">
 <form action="" method="POST">{% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" />
+    <input type="submit" value="Tavsiyeyi gor" />
 </form>
+</section>
+<section id="result">
+   <p>Test</p>
+	</section>
+</body>
+</html>

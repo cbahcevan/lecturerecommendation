@@ -1,8 +1,11 @@
 from django.shortcuts import render
+from .models import TrainData
 from .forms import DForms
+import preparedata
+
 def main(request):
     form = DForms()
-
+    print preparedata.fitDataToPandas(TrainData.objects.all())
     if request.method == "POST":
     	print request.POST['math']
     	if form.is_valid():

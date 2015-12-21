@@ -5,24 +5,33 @@ and user
 """
 
 import pandas as pd
-from models import TrainData
 import numpy as np
 
 
-def fitDataToPandas():
-	data = []
-	for element in TrainData.objects.all():
-		current = []
-		for feature in  element:
-			current.append(feature)
-		data.append(current)
-	print data
-
-def createTargetForEvaluate(arr):
-	return np.array(arr)
 
 
+def fitDataToPandas(input):
+	output = []
+	target = []
+	for element in input:
+		current=[]
+		
+		current = [element.math,element.lit,
+		                                 element.read,element.high,element.music
+		                                 ,element.polits]
+		target.append(element.lecpref)
+		output.append(current)
+    
+	return (target,output)
+		
 
-fitDataToPandas()
+
+
+
+
+
+
+
+
 
 
