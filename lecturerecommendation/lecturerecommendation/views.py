@@ -11,6 +11,7 @@ def main(request):
     	if form.is_valid():
     	 print "valid oluyormu"
          form = DForms(request.POST)
-         print form.cleaned_data["math"]
+         math= form.cleaned_data["math"]
+         lit= form.cleaned_data ["lit"]
          return render(request, 'main.html', {})      
     return render(request, 'main.html', {'form':form})
