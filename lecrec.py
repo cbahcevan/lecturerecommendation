@@ -23,7 +23,7 @@ frame =  pd.DataFrame([[1,0],[0,1],[1,0],[0,1],[1,1],[1,1]])
 target = np.array(["math","bus","math","bus","bus","math"])
 
 clf = DecisionTreeClassifier(criterion="entropy")
-
+print frame
 clf.fit(frame,target)
 
 predictionData = []
