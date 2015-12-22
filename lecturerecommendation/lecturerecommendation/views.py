@@ -10,7 +10,7 @@ and predict using sklearn
 """
 def organizeFormData(req):
 	organized = map(lambda x:req[x],req)
-	del(organized[4])#csrf token
+	del(organized[5])#csrf token
 	return map(lambda x:int(x),organized)
 
 
@@ -20,15 +20,11 @@ def main(request):
     veritaanindaki traindatayi
     """
     if request.method == "POST":
-<<<<<<< HEAD
+
     	userData = organizeFormData(request.POST)
         d = preparedata.fitDataToPandas(TrainData.objects.all())
-        print recommend.evaluate(d[0],d[1],userData)
+        result= recommend.evaluate(d[0],d[1],userData)
+        
 
-=======
-    	evaluationData = organizeFormData(request.POST)
-        databaseTrain = TrainData.objects.all()
-        trainPrepared = preparedata.fitDataToPandas(databaseTrain)
->>>>>>> origin/master
-        return render(request, 'main.html', {})      
+        return render(request, 'main.html', {'rec':result})      
     return render(request, 'main.html', {'form':form})

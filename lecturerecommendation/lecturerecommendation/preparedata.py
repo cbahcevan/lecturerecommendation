@@ -22,11 +22,11 @@ def fitDataToPandas(input):
 		target.append(element.lecpref)
 		output.append(current)
     
-<<<<<<< HEAD
+
 	return (pd.DataFrame(output),np.array(target))
-=======
+
 	return (pd.dataFrame(target),np.array,(output))
->>>>>>> origin/master
+
 		
 
 
