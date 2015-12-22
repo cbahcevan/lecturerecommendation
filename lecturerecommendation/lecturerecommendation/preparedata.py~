@@ -22,7 +22,7 @@ def fitDataToPandas(input):
 		target.append(element.lecpref)
 		output.append(current)
     
-	return (pd.dataFrame(target),np.array,(output))
+	return (target,output)
 		
 
 

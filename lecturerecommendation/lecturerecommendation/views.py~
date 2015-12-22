@@ -10,15 +10,13 @@ and predict using sklearn
 def organizeFormData(req):
 	organized = map(lambda x:req[x],req)
 	del(organized[4])#csrf token
-	return map(lambda x:int(x),organized)
+	print map(lambda x:int(x),organized)
 
 
 def main(request):
     form = DForms()
     print preparedata.fitDataToPandas(TrainData.objects.all())
     if request.method == "POST":
-    	evaluationData = organizeFormData(request.POST)
-        databaseTrain = TrainData.objects.all()
-        trainPrepared = preparedata.fitDataToPandas(databaseTrain)
+    	organizeFormData(request.POST)
         return render(request, 'main.html', {})      
     return render(request, 'main.html', {'form':form})
