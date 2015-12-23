@@ -14,3 +14,8 @@ class TrainData(models.Model):
     music = models.IntegerField(choices=love)
     polits = models.IntegerField(choices=love)
     lecpref = models.CharField(max_length=3)
+
+class Lectures(models.Model):
+    lecid=models.CharField(max_length=6)
+    lecture_name = models.CharField(max_length=100)
+    lecture_explanation = models.CharField(max_length=2000)

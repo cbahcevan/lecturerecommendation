@@ -9,5 +9,3 @@ def evaluate(frame,target,input):
 	print frame
 	clf.fit(frame,target)
 	return clf.predict(np.array(input))
-
-
