@@ -11,11 +11,13 @@ and predict using sklearn
 
 def loadLectureDetails(req):
 	print req[0]
-	return "buraya aciklama gelicek:",str(req[0])
+	expla = Lectures.objects.get(lecid=str(req[0]))
+	result = expla.lecture_explanation
+	return result
 
 def organizeFormData(req):
 	organized = map(lambda x:req[x],req)
-	del(organized[5])#csrf token
+	del(organized[5])#csrf tokens
 	return map(lambda x:int(x),organized)
 
 
