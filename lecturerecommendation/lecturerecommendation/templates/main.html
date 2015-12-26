@@ -1,21 +1,25 @@
 <html>
 
 <head>
-	<style>
-	#result{
-	 position:relative;
+  <style>
+  #yazi {
+    color:white
+  }
+  #result{
+   position:relative;
      margin-left:40%;
      }
      #question{
+       color:white;
       position:absolute;
      }
      </style>
-	</head>
-	<body>
+  </head>
+<body style="background-color:#DB7093">
 
-<body>
 
 <h1> Lecture Recommendation System </h1>
+<h2>CenkBengisuCan</h2>
 <section id="question">
 <form action="" method="POST">{% csrf_token %}
     {{ form.as_p }}
@@ -25,7 +29,7 @@
 </section>
 <section id="result">
    <p>{{ rec }}</p>
-	</section>
+  </section>
 
 </body>
 </html>
