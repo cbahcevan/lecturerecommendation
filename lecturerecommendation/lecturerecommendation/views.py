@@ -41,9 +41,9 @@ def main(request):
 
         explanation = getFromLectures(str(result[0]))
         print str(result[0])
-        
 
-        return render(request, 'main.html', {'rec':explanation,'ders':str(result[0])})      
+
+        return render(request, 'main.html', {'rec':explanation,'ders':str(result[0]),'form':form})      
 
 
 

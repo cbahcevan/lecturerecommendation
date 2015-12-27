@@ -4,12 +4,16 @@
 
   <style>
   #yazi {
-    color:white
+    color:floralwhite
+
   }
+  #yazi2 {
+    color:firebrick  }
+
   #result{
    position:relative;
      margin-left:40%;
-     
+
      color:white;
      background-color:black;
      }
@@ -26,14 +30,14 @@
 
   </head>
 
-	
+
 	</head>
 
 <body>
 
 
-<h1> Lecture Recommendation System </h1>
-<h2>CenkBengisuCan</h2>
+<h1 id="yazi2">Lecture Recommendation System </h1>
+<h2 id="yazi2">CenkBengisuCan</h2>
 <section id="question">
 <form action="" method="POST">{% csrf_token %}
     {{ form.as_p }}
