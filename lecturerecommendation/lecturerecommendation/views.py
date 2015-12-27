@@ -15,7 +15,6 @@ def getFromLectures(lecid):
 
 
 def loadLectureDetails(req):
-	print req[0]
 	expla = Lectures.objects.get(lecid=str(req[0]))
 	result = expla.lecture_explanation
 	return result
@@ -44,7 +43,7 @@ def main(request):
         print str(result[0])
         
 
-        return render(request, 'main.html', {'rec':explanation})      
+        return render(request, 'main.html', {'rec':explanation,'ders':str(result[0])})      
 
 
 
